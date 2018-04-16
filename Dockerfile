@@ -5,7 +5,7 @@ RUN chmod +x /usr/local/bin/dumb-init
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
 # install inotify
-RUN apk update && apk add inotify-tools bash
+RUN apk update && apk add inotify-tools bash openssl
 
 COPY nginx-reload.sh /app/nginx-reload.sh
 RUN chmod +x /app/nginx-reload.sh
